@@ -11,7 +11,7 @@ Use the Builder pattern when:
 class Forge(object):
     """
     Builder
-    Specifies and abstract interface for creating parts of a Product object.
+    Specifies an abstract interface for creating parts of a Product object.
     """
     def __init__(self):
         self.item = None
@@ -43,7 +43,7 @@ class ForgeSword(Forge):
     1. Constructs and assembles parts of the product by implementing the
        Builder interface.
     2. Defines and keeps track of the representation it creates.
-    3. Provides and interface for retrieving the product.
+    3. Provides an interface for retrieving the product.
     """
     def build_blade(self, attr):
         blade = Blade()
@@ -76,7 +76,7 @@ class ForgeSword(Forge):
 class Blacksmith:
     """
     Director
-    Constructs and object using the Builder interface.
+    Constructs an object using the Builder interface.
     """
     def __init__(self):
         self.builder = None
@@ -202,14 +202,7 @@ class Knife(object):
 
 
 class Sword(object):
-    """
-    Product
-    1. Represents the complex object under construction.
-       Concrete Builder builds the product's internal representation and
-       defines the process by which it's assembled.
-    2. Includes classes that define the constituent parts, including
-       interfaces for assembling the parts into the final result.
-    """
+    """Product"""
     def __init__(self, kind):
         self.__blade  = None
         self.__grip   = None
@@ -250,6 +243,10 @@ class Sword(object):
 
 
 class Blade:
+    """
+    Product Part
+    Individual elements that constitute a whole product.
+    """
     def __init__(self):
         self.edges    = None
         self.is_sharp = False
@@ -258,6 +255,7 @@ class Blade:
 
 
 class CrossGuard:
+    """Product Part"""
     def __init__(self):
         self.length = None
         self.model  = None
@@ -265,6 +263,7 @@ class CrossGuard:
 
 
 class Grip:
+    """Product Part"""
     def __init__(self):
         self.length = None
         self.size   = None
@@ -272,6 +271,7 @@ class Grip:
 
 
 class Pommel:
+    """Product Part"""
     def __init__(self):
         self.length = None
         self.model  = None
@@ -281,9 +281,7 @@ class Pommel:
 import random
 
 if __name__ == "__main__":
-    """Client"""
     item = random.choice(["Jagdkommando","Katana","Santoku","Zweihander"])
-    print item
     director = Blacksmith()
     director.builder = ForgeSword()
     product = director.build(item)
