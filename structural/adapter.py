@@ -167,15 +167,54 @@ class Client(object):
         # Clients call operations on an Adapter instance. In turn, the
         # adapter calls Adaptee operations that carry out the request.
         a = []
-        for person in [Walker, Runner]:
-            a.append(ObjectAdapter( person() ))
+        for adapter in [RunnerClassAdapter, SprinterClassAdapter, WalkerClassAdapter]:
+            a.append(adapter())
 
-        person = Sprinter()
-        a.append(PythonAdapter( person, action=person.sprint ))
-
+        print '-- Using Class Adapters --'
         print a[0].action()
         print a[1].action()
         print a[2].action()
+        print ''
+
+        for person in [Runner, Sprinter, Walker]:
+            p = person()
+
+            if str(p) == 'Runner':
+                attr = p.run
+            elif str(p) == 'Sprinter':
+                attr = p.sprint
+            elif str(p) == 'Walker':
+                attr = p.walk
+            else:
+                raise NotImplementedError
+
+            a.append(ObjectAdapter(p))
+
+        print '-- Using Python Object Adapter --'
+        print a[3].action()
+        print a[4].action()
+        print a[5].action()
+        print ''
+
+        for person in [Runner, Sprinter, Walker]:
+            p = person()
+
+            if str(p) == 'Runner':
+                attr = p.run
+            elif str(p) == 'Sprinter':
+                attr = p.sprint
+            elif str(p) == 'Walker':
+                attr = p.walk
+            else:
+                raise NotImplementedError
+
+            a.append(PythonObjectAdapter(p, action=attr))
+
+        print '-- Using Python Object Adapter --'
+        print a[6].action()
+        print a[7].action()
+        print a[8].action()
+        print ''
 
 
 if __name__ == '__main__':
