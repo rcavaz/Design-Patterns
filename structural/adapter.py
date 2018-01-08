@@ -190,7 +190,7 @@ class Client(object):
 
             a.append(ObjectAdapter(p))
 
-        print '-- Using Python Object Adapter --'
+        print '-- Using Object Adapter --'
         print a[3].action()
         print a[4].action()
         print a[5].action()
