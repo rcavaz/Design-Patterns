@@ -1,8 +1,7 @@
 # Structural Patterns
 
 ## Adapter
-Class Adapter
-![Class Adapter](./structural/ClassAdapter.png)
----
-Object Adapter
-![Object Adapter](./structural/ObjectAdapter.png)
+Pattern        | Diagram
+:------------: | -------
+Class Adapter  | ![Class Adapter](./ClassAdapter.png)
+Object Adapter | ![Object Adapter](./ObjectAdapter.png)
