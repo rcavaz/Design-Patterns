@@ -1,6 +1,8 @@
 # Design-Patterns
 A collection of software design patterns from the well known "Design Patterns : Elements of Reusable Object-Oriented Software" book implemented in various langagues.
 
+The code implementations differ from those from the book and include inline documentation sepecific to the language being used.
+
 ## [Creational](./creational/README.md)
 Pattern          | Intent
 :--------------: | ------
