@@ -3,5 +3,5 @@
 ## Adapter
 Pattern        | Diagram
 :------------: | -------
-Class Adapter  | ![Class Adapter](./ClassAdapter.png)
-Object Adapter | ![Object Adapter](./ObjectAdapter.png)
+Class Adapter  | ![Class Adapter](./uml/ClassAdapter.png)
+Object Adapter | ![Object Adapter](./uml/ObjectAdapter.png)

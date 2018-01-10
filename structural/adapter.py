@@ -55,17 +55,6 @@ class Sprinter(object):
         return '%s runs at a top speed of 27 mph.' % self
 
 
-class Walker(object):
-    """
-    Adaptee
-    """
-    def __str__(self):
-        return 'Walker'
-
-    def walk(self):
-        return '%s moves at a rate of 3 mph on average.' % self
-
-
 class RunnerClassAdapter(Person, Runner):
     """
     Adapter
@@ -91,14 +80,6 @@ class SprinterClassAdapter(Person, Sprinter):
     """
     def action(self):
         return self.sprint()
-
-
-class WalkerClassAdapter(Person, Walker):
-    """
-    Adapter
-    """
-    def action(self):
-        return self.walk()
 
 
 class ObjectAdapter(Person):
@@ -169,15 +150,14 @@ class Client(object):
         a = []
 
         print '-- Using Class Adapters --'
-        for adapter in [RunnerClassAdapter, SprinterClassAdapter, WalkerClassAdapter]:
+        for adapter in [RunnerClassAdapter, SprinterClassAdapter]:
             a.append(adapter())
         print a[0].action()
         print a[1].action()
-        print a[2].action()
         print ''
 
         print '-- Using Object Adapter --'
-        for person in [Runner, Sprinter, Walker]:
+        for person in [Runner, Sprinter]:
             p = person()
             if str(p) == 'Runner':
                 attr = p.run
@@ -188,13 +168,12 @@ class Client(object):
             else:
                 raise NotImplementedError
             a.append(ObjectAdapter(p))
+        print a[2].action()
         print a[3].action()
-        print a[4].action()
-        print a[5].action()
         print ''
 
         print '-- Using Python Object Adapter --'
-        for person in [Runner, Sprinter, Walker]:
+        for person in [Runner, Sprinter]:
             p = person()
             if str(p) == 'Runner':
                 attr = p.run
@@ -205,9 +184,8 @@ class Client(object):
             else:
                 raise NotImplementedError
             a.append(PythonObjectAdapter(p, action=attr))
-        print a[6].action()
-        print a[7].action()
-        print a[8].action()
+        print a[4].action()
+        print a[5].action()
         print ''
 
 
