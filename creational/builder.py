@@ -7,7 +7,48 @@ Use the Builder pattern when:
        the parts that make up the object and how they're assembled.
     2. the construction process must allow different representations for the
        object that's constructed.
+
+
+Implementation:
+
+    Suppose we want to be able to construct many different representations of
+    knife or sword objects which all have the following common parts:
+        1) a Blade, which could have between 1 and 3 edges;
+        2) a Cross Guard (optional),
+        3) a Grip,
+        4) and a Pommel (optional).
+
+    All these three parts may vary in length and size.
+    We will define only 4 of the many possible representations that can be
+    made out of the combinations of these parts, which are:
+        a) Jagdkommando, a knife will 3 blades.
+        b) Santoku, an all purpose kitchen knife.
+        c) Katana, a one edged sword.
+        d) Zweihander, a big 2 edged sword.
+
+
+    We will create a Builder class called Forge which will define our interface
+    for creating the parts of our products.
+
+    Then we will create a Concrete Builder class called ForgeCutlery which will
+    be responsible of assembling the parts of the product.
+
+    Next we will create a Director class called Blacksmith who will know the
+    construction steps for each of our Cutlery products.
+
+    After this we will create Product classes Knife and Sword which will
+    define interfaces for assembling the parts.
+
+    Then we will create Product Part classes for each of the 4 possible parts
+    the products might be made of.
+
+    Finally we will create a Client class that will create an instance of our
+    Blacksmith director, configure it to build a cutlery product, and randomly
+    request the creation of one of the many representations defined.
 """
+import random
+
+
 class Forge(object):
     """
     Builder
@@ -37,7 +78,7 @@ class Forge(object):
         raise NotImplementedError
 
 
-class ForgeSword(Forge):
+class ForgeCutlery(Forge):
     """
     Concrete Builder
     1. Constructs and assembles parts of the product by implementing the
@@ -278,11 +319,23 @@ class Pommel:
         self.weight = None
 
 
-import random
+class Client:
+    def main(self):
+        item = random.choice(["Jagdkommando","Katana","Santoku","Zweihander"])
+
+        # The client creates the Director object and configures it with the
+        # desired Builder object.
+        director = Blacksmith()
+        director.builder = ForgeCutlery()
+
+        # Director notifies the builder whenever a part of the product should
+        # be built while Builder handles requests from the director and adds
+        # parts to the product. Finally, the client retrieves the product from
+        # the builder.
+        product = director.build(item)
+        product.specification()
+
 
 if __name__ == "__main__":
-    item = random.choice(["Jagdkommando","Katana","Santoku","Zweihander"])
-    director = Blacksmith()
-    director.builder = ForgeSword()
-    product = director.build(item)
-    product.specification()
+    client = Client()
+    client.main()

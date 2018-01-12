@@ -8,6 +8,8 @@ Use the Singleton pattern when:
     2. the sole instance should be extensible by subclassing, and clients
        should be able to use an extended instance without modifying their code.
 """
+import logging
+
 
 class Connection(object):
     """
@@ -19,9 +21,10 @@ class Connection(object):
     def __new__(type):
         if not '_connection' in type.__dict__:
             type._connection = object.__new__(type)
-            print "New database connection created!"
+            logging.basicConfig(level=logging.INFO)
+            logging.info('New database connection created!')
 
-        print "0k!"
+        logging.info('Connection established.')
         return type._connection
 
 
