@@ -45,6 +45,15 @@ class FlyweightFactory(object):
 
 class Client(object):
     def main(self):
+        # State that a flyweight needs to function must be characterized as
+        # either intrinsic or extrinsic. Intrinsic state is stored in the
+        # ConcreteFlyweight object; extrinsic state is stored or computed by
+        # Client objects. Clients pass this state to the flyweight when they
+        # invoke its operations.
+        #
+        # Clients should not instantiate ConcreteFlyweights directly but
+        # obtain them exclusively from the FlyweightFactory object to ensure
+        # they are shared properly.
         factory = FlyweightFactory()
         for i in ['A', 'B', 'C', 'A']:
             obj = factory.getFlyweight(i)

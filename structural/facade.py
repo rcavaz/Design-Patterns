@@ -38,6 +38,14 @@ class Facade(object):
 
 class Client(object):
     def main(self, cmd):
+        # Clients communicate with the subsystem by sending requests to Facade,
+        # which forwards them to the approrpiate subsystem object(s). Although
+        # the subsystem objects perform the actual work, the facade may have
+        # to do work of its own to translate its interface to subsystem
+        # interfaces.
+        #
+        # Clients that use the facade don't have to access it's subsystem
+        # objects directly.
         compiler = Facade()
         if cmd == 'hello':
             compiler.operationA()
