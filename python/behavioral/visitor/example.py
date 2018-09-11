@@ -5,15 +5,15 @@ import unittest
 class Visitor(object):
     def __init__(self):
         self.filtered = list()
-    def visitConcreteElementA(self, element):
-        assert(isinstance(element, ConcreteElementA))
-        raise NotImplementedError
-
-    def visitConcreteElementB(self, element):
-        assert(isinstance(element, ConcreteElementB))
-        raise NotImplementedError
     def result(self):
         return self.filtered
+    def visitNumericElement(self, element):
+        assert(isinstance(element, NumericElement))
+        raise NotImplementedError
+
+    def visitCharElement(self, element):
+        assert(isinstance(element, CharElement))
+        raise NotImplementedError
 
 
 class NumericFilter(Visitor):
