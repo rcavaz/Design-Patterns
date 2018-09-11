@@ -95,15 +95,12 @@ class ObjectStructure(object):
     def __init__(self):
         self.elements = list()
         self.visitor = None
-
     def addElement(self, e):
         assert(isinstance(e, Element))
         self.elements.append(e)
-
     def setVisitor(self, v):
         assert(isinstance(v, Visitor))
         self.visitor = v
-
     def traverse(self):
         for element in self.elements:
             element.accept(self.visitor)
