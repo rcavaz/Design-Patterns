@@ -10,7 +10,6 @@ class Visitor(object):
     def visitNumericElement(self, element):
         assert(isinstance(element, NumericElement))
         raise NotImplementedError
-
     def visitCharElement(self, element):
         assert(isinstance(element, CharElement))
         raise NotImplementedError
