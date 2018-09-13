@@ -125,11 +125,23 @@ class Node(object):
         self.parent = None
         self.right = None
         self.value = value
+    def __eq__(self, other):
+        return self.value == other.value
+    def __ge__(self, other):
+        return self > other or self == other
+    def __gt__(self, other):
+        return self.value > other.value
+    def __lt__(self, other):
+        return self.value < other.value
+    def __le__(self, other):
+        return self < other or self == other
+    def __ne__(self, other):
+        return self.value != other.value
     def setParent(self, node):
         self.parent = node
     def addChild(self, node):
         assert(isinstance(node, Node))
-        if node.value < self.value:
+        if node < self:
             if self.left is None:
                 self.left = node
                 node.setParent(self)
