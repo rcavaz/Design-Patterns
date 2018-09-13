@@ -21,44 +21,44 @@ class InOrderIterator(Iterator):
         logging.info('({}) New iterator'.format(type(self).__name__))
         assert(isinstance(obj, Aggregate))
         assert(isinstance(obj.root, Node))
-        self.aggregate = obj
-        self.current = None
-        self.count = 0
-        self.stack = list()
+        self._aggregate = obj
+        self._current = None
+        self._count = 0
+        self._stack = list()
+        self._fillStack()
     def first(self):
         logging.info('({}) Reset iterator'.format(type(self).__name__))
-        self.stack = list()
-        self.count = 0
-        self.current = None
-        self.fillStack()
+        self._stack = list()
+        self._count = 0
+        self._current = None
+        self._fillStack()
         return self.next()
     def next(self):
         logging.info('({}) Get next item ...'.format(type(self).__name__))
-        if self.isDone():
+        try:
+            self._current = self._stack.pop()
+            self._count += 1
+            return self._current
+        except IndexError:
             return None
-        if len(self.stack) == 0:
-            self.fillStack()
-        self.count += 1
-        return self.pop()
-    def pop(self):
-        self.current = self.stack.pop()
-        if self.current.right is not None:
-            self.stack.append(self.current.right)
-            self.fillStack()
-        logging.info('({}) ... current item: {}'.format(type(self).__name__, self.current.value))
-        return self.current
-    def fillStack(self):
+    def _fillStack(self):
         logging.info('({}) Fill stack'.format(type(self).__name__))
-        if self.current is None:
-            cursor = self.aggregate.root
-            self.stack.append(cursor)
-        else:
-            cursor = self.stack[-1]
-        while cursor.left is not None:
-            cursor = cursor.left
-            self.stack.append(cursor)
+        cursor = self._aggregate.root
+        while cursor.right: cursor = cursor.right
+        while not self.isDone():
+            if cursor is not None:
+                self._stack.append(cursor)
+                self._count += 1
+            if cursor.left:
+                cursor = cursor.left
+                while cursor.right: cursor = cursor.right
+            else:
+                while cursor.parent and (cursor.parent == cursor.parent.left):
+                    cursor = cursor.parent
+                cursor = cursor.parent
+        self._count = 0
     def isDone(self):
-        if self.count >= len(self.aggregate):
+        if self._count >= len(self._aggregate):
             result = True
         else:
             result = False
@@ -66,7 +66,7 @@ class InOrderIterator(Iterator):
         return result
     def currentItem(self):
         logging.info('({}) Get current item: {}'.format(type(self).__name__, self.current.value))
-        return self.current
+        return self._current
 
 
 class PreOrderIterator(Iterator):
