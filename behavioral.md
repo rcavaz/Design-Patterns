@@ -1,8 +1,8 @@
 # Behavioral Patterns
 
-Pattern                 | UML
-:---------------------: | ------
-Chain of Responsibility | ![Chain of Responsibility](./uml/chain.png)
+Pattern                 | UML | code
+:---------------------: | --- | ----
+Chain of Responsibility | ![Chain of Responsibility](./uml/chain.png) | [python](./python3/behavioral/chain)
 Command                 | ![Command](./uml/command.png)
 Interpreter             | ![Interpreter](./uml/interpreter.png)
 Iterator                | ![Iterator](./uml/iterator.png)
