@@ -1,5 +1,5 @@
-# [Design Patterns](./README.md)
-## [Behavioral Patterns](../../../behavioral.md)
+# [Design Patterns](../README.md)
+## [Behavioral Patterns](../../../readmes/behavioral.md)
 ### Memento
 
 ![Memento](../../../uml/memento.png)
