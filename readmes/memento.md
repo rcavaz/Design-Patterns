@@ -15,10 +15,11 @@ The intent of this pattern is to capture the internal state of an object without
 
 | Language                               | Example |
 | :------------------------------------: | ------- |
-| [python](./python3/behavioral/memento) | [undo](./python3/behavioral/memento/undo.py)
+| [python](../python3/behavioral/memento) | [undo](../python3/behavioral/memento/undo.py)
 
 #### Specific problems and implementation consecuences
 
 #### Related Patterns
+* [Command Pattern](./command.md) - Commands can make use of mementos to support undoable operations.
 
 #### Known Uses
