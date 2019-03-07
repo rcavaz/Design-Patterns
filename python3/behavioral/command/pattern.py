@@ -36,11 +36,14 @@ Use this pattern when you want to:
        way. The pattern also makes it easy to extend the system with new
        transactions.
 """
+
+
 class Receiver(object):
     """
     - Knows how to perform the operations associated with carrying out a request.
     - Any class may serve as a Receiver.
     """
+
     def action(self):
         logging.info(f'({type(self).__name__}) action()')
         return 'Hello, World!'
@@ -50,6 +53,7 @@ class Command(ABC):
     """
     - Declares an interface for executing an operation.
     """
+
     def __init__(self, receiver):
         logging.debug(f'New {self}')
         assert(isinstance(receiver, Receiver))
@@ -70,6 +74,7 @@ class ConcreteCommand(Command):
     - Defines a binding between a Receiver object and an action.
     - Implements execute() by invoking the corresponding operation(s) on Receiver.
     """
+
     def execute(self):
         logging.info(f'({self}) execute()')
         return self.receiver.action()
@@ -79,6 +84,7 @@ class Invoker(object):
     """
     - Asks the command to carry out the request.
     """
+
     def __init__(self):
         logging.debug(f'New {self}')
         self._command = None
@@ -100,6 +106,7 @@ class Client(object):
     """
     - Creates a ConcreteCommand object and sets its receiver.
     """
+
     def __init__(self, invoker):
         assert(isinstance(invoker, Invoker))
         logging.debug(f'New {type(self).__name__}')
