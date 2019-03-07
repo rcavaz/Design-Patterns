@@ -11,10 +11,10 @@ class Memento:
         self.state = State()
 
     def setState(self, state):
-        self.serialized_state = SerializedState(state)
+        self.state = SerializedState(state)
 
     def getState(self):
-        return self.serialized_state
+        return self.state
 ```
 * Stores internal state of the Originator object. The state can include any number of state variables.
 * The Memento must have two interfaces; one to the CareTaker and one to the Originator.
