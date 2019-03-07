@@ -11,7 +11,7 @@ Command                 | Encapsulate a request as an object, thereby letting yo
 Interpreter             | Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language. | ![Interpreter](./uml/interpreter.png)
 Iterator                | Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation. | ![Iterator](./uml/iterator.png)
 Mediator                | Define an object that encapsulates how a set of objects interact. | ![Mediator](./uml/mediator.png)
-Memento                 | Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later. | ![Memento](./uml/memento.png)
+[Memento](./memento.md) | Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later. | ![Memento](./uml/memento.png)
 Observer                | Define a one-to-many dependency between objects so that when an object changes state, all its dependents are notified and updated automatically. | ![Observer](./uml/observer.png)
 State                   | Allow an object to alter its behavior when its internal state changes. The object will appear to change its class. | ![State](./uml/state.png)
 Strategy                | Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it. | ![Strategy](./uml/strategy.png)
