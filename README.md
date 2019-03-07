@@ -3,7 +3,7 @@ This is a collection of software design patterns from the well known "Design Pat
 
 The main motivation for this proyect is for people to learn and compare programming languages while implementing these software patterns.
 
-The code implementations differ from the book and include documentation specific to the language being used. To find a specific language implementation search for the 'Examples' section on each patter page, right below the UML diagram.
+The code implementations differ from the book and include documentation specific to the language being used. To find a specific language implementation search for the 'Examples' section on each pattern page, right below the UML diagram.
 
 ## [Behavioral](./readmes/behavioral.md)
 Pattern                                       | Intent | UML

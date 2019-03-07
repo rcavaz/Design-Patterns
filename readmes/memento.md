@@ -8,7 +8,6 @@ It is sometimes necessary to capture the internal state of an object at some poi
 #### Intent
 The intent of this pattern is to capture the internal state of an object without violating encapsulation and thus providing a mean for restoring the object into initial state when needed.
 
-
 #### Applicability & Examples
 
 ![Memento](../uml/memento.png)
