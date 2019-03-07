@@ -1,5 +1,5 @@
 # [Design Patterns](../README.md)
-## [Behavioral Patterns](../behavioral.md)
+## [Behavioral Patterns](./behavioral.md)
 ### Memento Pattern
 
 #### Motivation

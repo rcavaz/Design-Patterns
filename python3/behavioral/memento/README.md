@@ -1,4 +1,4 @@
-# [Design Patterns](../README.md)
+# [Design Patterns](../../README.md)
 ## [Behavioral Patterns](../../../readmes/behavioral.md)
 ### Memento
 
