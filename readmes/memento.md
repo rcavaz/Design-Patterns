@@ -1,5 +1,5 @@
-# [Design Patterns](./README.md)
-## [Behavioral Patterns](../../../behavioral.md)
+# [Design Patterns](../README.md)
+## [Behavioral Patterns](../behavioral.md)
 ### Memento Pattern
 
 #### Motivation
@@ -11,7 +11,7 @@ The intent of this pattern is to capture the internal state of an object without
 
 #### Applicability & Examples
 
-![Memento](./uml/memento.png)
+![Memento](../uml/memento.png)
 
 | Language                               | Example |
 | :------------------------------------: | ------- |
