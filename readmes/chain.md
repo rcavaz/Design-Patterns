@@ -23,7 +23,3 @@ The Chain of Responsibility design pattern allows an object to send a command, w
 #### Related Patterns
 * [Command](./command.md) - Chain of Responsibility can use Command to represent requests as objects.
 * [Composite](./composite.md) - Component parents can act as successors.
-
-#### Known Uses
-* Database Transactions
-* Undo/Restore operations

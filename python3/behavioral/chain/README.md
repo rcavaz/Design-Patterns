@@ -5,21 +5,45 @@
 ![Memento](../../../uml/chain.png)
 
 ```
-class Handler:
-    pass
+class Handler(ABC):
+    def __init__(self, successor=None):
+        self.__successor = successor
+
+    @abstractmethod
+    def handle_request(self):
+        pass
+
+    @property
+    def successor(self):
+        return self.__successor
+
+    @successor.setter
+    def successor(self, successor):
+        self.__successor, successor
 ```
 * Defines an interface for handling requests.
 
 ```
-class ConcreteHandler:
-    pass
+class ConcreteHandler(Handler):
+    def handle_request(self, request):
+        if can_handle:
+          # Handling block ...
+        elif self.successor is not None:
+          return self.successor.handle_request(request)
 ```
 * Handles the requests it is responsible for.
   * If it can't handle it, it sends it to its successor.
 
 ```
 class Client:
-    pass
+    def action_1(self, request):
+        h = ConcreteHandler()
+        return h.handle_request(request)
+
+    def action_2(self, request):
+        h1 = ConcreteHandler1()
+        h2 = ConcreteHandler2(h1)
+        return h2.handle_request(request)
 ```
 * Sends commands to the root of the chain.
 
