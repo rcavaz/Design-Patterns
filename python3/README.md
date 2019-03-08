@@ -7,7 +7,7 @@ This directory compiles a collection of Software Design Patterns implemented in 
 ```bash
 pipenv [--python /path/to/python3] install
 pipenv shell
-[<INFO|DEBUG>=1] python <category>/<pattern>/pattern.py
+[<INFO|DEBUG>=1] python <category>/<pattern>/example.py
 ```
 
 # Structure
