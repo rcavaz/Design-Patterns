@@ -29,10 +29,15 @@ class FibonacciIterator:
 
     @property
     def memento(self):
+        # Here, the vars() function returns the the __dict__ attribute of
+        # our object and its passed to the pickle module to pack it into a
+        # binary stream, thus honoring encapsulation.
         return pickle.dumps(vars(self))
 
     @memento.setter
     def memento(self, token):
+        # Unpacks the binary stream into a python object that can be used by
+        # vars() to update the object state.
         prev_state = pickle.loads(token)
         vars(self).clear()
         vars(self).update(prev_state)
