@@ -56,7 +56,7 @@ class CareTaker:
 * The memento is opaque to the CareTaker, and the CareTaker must not operate on it.
 
 ### Examples
-1. [Undo](./undo.py)
+1. [Fibonacci](./fibo.py) - Support a 'prev' operation to rollback to a previous state.
 
 
 ### Related Patterns
