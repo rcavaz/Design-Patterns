@@ -1,6 +1,6 @@
 # [Design Patterns](../../../README.md)
 ## [Behavioral Patterns](../../../readmes/behavioral.md)
-### Chain of Responsibility
+### Chain of Responsibility Pattern
 
 ![Memento](../../../uml/chain.png)
 
