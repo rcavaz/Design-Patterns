@@ -2,7 +2,7 @@
 ## [Behavioral Patterns](../../../readmes/behavioral.md)
 ### Chain of Responsibility Pattern
 
-![Memento](../../../uml/chain.png)
+![Chain of Responsibility](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/rcavaz/DesignPatterns/python/uml/chain.uml)
 
 ```
 class Handler(ABC):

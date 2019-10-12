@@ -1,0 +1,25 @@
+@startuml
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Handler {
+ +handleRequest()
+}
+
+class ConcreteHandler1 {
+ +handleRequest()
+}
+
+class ConcreteHandler2 {
+ +handleRequest()
+}
+
+Client --> Handler
+Handler <-- Handler : successor
+Handler <|-- ConcreteHandler1
+Handler <|-- ConcreteHandler2
+@enduml
