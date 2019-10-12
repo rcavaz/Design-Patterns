@@ -1,0 +1,23 @@
+@startuml
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+hide empty attributes
+hide empty members
+
+abstract AbstractClass
+class SubClass {
+ - ConcreteClass attribute
+ + SubClass property()
+}
+class ConcreteClass
+
+AbstractClass <|-- SubClass : Extends
+Interface <|.. ConcreteClass : Implements
+SubClass <.. SubClass : Dependency
+SubClass --> ConcreteClass : Association
+@enduml

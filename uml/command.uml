@@ -1,0 +1,45 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Command {
+ +void execute()
+}
+class ConcreteCommand {
+ +State data
+ +void execute()
+}
+class Client
+class Invoker
+class Receiver {
+ +action()
+}
+
+Client .right.> Command : instantiate
+Client --> Receiver
+Command <|-- ConcreteCommand
+ConcreteCommand -left-> Receiver : receive
+Invoker o--> Command
+
+note "state = {\n\
+  targetObject: receiver\n\
+  targetMethod: methodPointer\n\
+}\n\
+===\n\
+execute() {\n\
+  receiver.action()\n\
+}" as N1
+
+note "receiver = Receiver()\n\
+command = ConcreteCommand(receiver)\n\
+invoker.run(command)" as N2
+
+N1 .. ConcreteCommand
+N2 .. Client
+@enduml
