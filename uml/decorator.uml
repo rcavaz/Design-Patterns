@@ -10,31 +10,43 @@ skinparam class {
 
 interface Component {
  +operation()
- +add(Component)
- +remove(Component)
- +getChild(key)
 }
-class Client
-class Composite {
- +operation()
- +add(Component)
- +remove(Component)
- +getChiled(key)
-}
-class Leaf {
+
+class ConcreteComponent {
  +operation()
 }
 
-Client -right-> Component
-Component <|-right- Leaf
-Component <|-- Composite
-Composite *--> Component
+together {
+ abstract Decorator {
+  +operation()
+ }
+ note right
+   <b>operation()</b> {
+     component->operation()
+   }
+ end note
 
-note right of Composite
-  <b>operation()</b> {
-  ...
-    forEach children
-      children.operation()
-  }
-end note
+ class ConcreteDecoratorA {
+  +addedBehavior()
+  +operation()
+ }
+ note left
+   <b>operation()</b> {
+     Decorator::operation()
+     addedBehavior()
+   }
+ end note
+
+ class ConcreteDecoratorB {
+  +addedState
+  +operation()
+ }
+
+}
+
+Component <|-- Decorator
+Component <|-left- ConcreteComponent
+Decorator o--> Component : component
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-- ConcreteDecoratorB
 @enduml
