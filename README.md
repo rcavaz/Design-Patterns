@@ -1,39 +1,37 @@
 # Design-Patterns
 This is a collection of software design patterns from the well known "Design Patterns : Elements of Reusable Object-Oriented Software" book implemented in python.
 
-The main motivation for this proyect is for people to learn and compare programming languages while implementing these software patterns.
+The main motivation for this proyect is for others to learn and compare programming languages while implementing these software patterns.
 
 The code implementations differ from the book and include documentation specific to the language being used. To find a specific language implementation search for the 'Examples' section on each pattern page, right below the UML diagram.
 
-## Clasification
+# Clasification
 
-### Class
+## By Scope
 
-Patterns that apply primarily to classes.
+These first 4 patterns apply to classes, but note that Adapter may also apply to objects.
 
-[Creational][2]      | [Structural][3] | [Behavioral][1]
-:------------------: | --------------- | -------------------
-[Factory Method][13] | [Adapter][5]    | [Interpreter][15]
-|                    |                 | [Template Method][25]
+Creational           | Structural   | Behavioral
+:------------------: | ------------ | -------------------
+[Factory Method][13] | [Adapter][5] | [Interpreter][15]
+|                    |              | [Template Method][25]
 
-### Object
+The rest of this catalog all apply to objects.
 
-Patterns that apply primarily to objects.
+Creational            | Structural      | Behavioral
+:-------------------: | --------------- | -------------------
+[Abstract Factory][4] | [Adapter][5]    | [Chain of Responsibility][8]
+[Builder][7]          | [Bridge][6]     | [Command][9]
+[Prototype][20]       | [Composite][10] | [Iterator][16]
+[Singleton][22]       | [Decorator][11] | [Mediator][17]
+|                     | [Facade][12]    | [Memento][18]
+|                     | [Flyweight][14] | [Observer][19]
+|                     | [Proxy][21]     | [State][23]
+|                     |                 | [Strategy][24]
+|                     |                 | [Visitor][26]
 
-[Creational][2]        | [Structural][3] | [Behavioral][1]
-:--------------------: | --------------- | -------------------
-[Abstract Factory][4]  | [Adapter][5]    | [Chain of Responsibility][8]
-[Builder][7]           | [Bridge][6]     | [Command][9]
-[Prototype][20]        | [Composite][10] | [Iterator][16]
-[Singleton][22]        | [Decorator][11] | [Mediator][17]
-|                      | [Facade][12]    | [Memento][18]
-|                      | [Flyweight][14] | [Observer][19]
-|                      | [Proxy][21]     | [State][23]
-|                      |                 | [Strategy][24]
-|                      |                 | [Visitor][26]
-
-
-## [Behavioral][1]
+## By Purpose
+### [Behavioral][1]
 Pattern                      | Intent | UML
 :--------------------------: | ------ | ------
 [Chain of Responsibility][8] | Object can fullfill a request.                                 | ![Chain of Responsibility][31]
@@ -48,7 +46,7 @@ Pattern                      | Intent | UML
 [Template Method][25]        | Steps of an algorithm.                                         | ![Template Method][48]
 [Visitor][26]                | Apply operation to objects without changing its class(es).     | ![Visitor][49]
 
-## [Creational][2]
+### [Creational][2]
 Pattern          | Intent | UML
 :-------------------: | ------ | ------
 [Abstract Factory][4] | Families of product objects.             | ![Abstract Factory][27]
@@ -57,7 +55,7 @@ Pattern          | Intent | UML
 [Prototype][20]       | Class of object that is instantiated.    | ![Prototype][43]
 [Singleton][22]       | The sole instance of a class.            | ![Singleton][45]
 
-## [Structural][3]
+### [Structural][3]
 Pattern                             | Intent | UML
 :-------------: | ------ | ------
 [Adapter][5]    | Interface of an object.                        | ![Adapter][28]
@@ -67,6 +65,7 @@ Pattern                             | Intent | UML
 [Facade][12]     | Interface to a subsystem.                      | ![Facade][35]
 [Flyweight][14] | Storage costs of objects.                      | ![Flyweight][37]
 [Proxy][21]     | How an object's location is accessed.          | ![Proxy][44]
+
 
 [1]: ./readmes/behavioral.md
 [2]: ./readmes/creational.md
