@@ -1,7 +1,7 @@
 @startuml
 hide empty attributes
 hide empty members
-skinparam backgroundcolor GhostWhite
+skinparam backgroundcolor White
 skinparam class {
  ArrowColor Black
  BackgroundColor White
@@ -14,8 +14,6 @@ abstract class AbstractFactory {
 }
 abstract class AbstractProductA
 abstract class AbstractProductB
-class ConcreteFactory1
-class ConcreteFactory2
 
 AbstractFactory <|-- ConcreteFactory1
 AbstractFactory <|-- ConcreteFactory2

@@ -1,5 +1,7 @@
 @startuml
-skinparam backgroundcolor GhostWhite
+hide empty attributes
+hide empty members
+skinparam backgroundcolor White
 skinparam class {
  ArrowColor Black
  BackgroundColor White

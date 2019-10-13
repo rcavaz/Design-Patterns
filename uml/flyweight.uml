@@ -24,20 +24,20 @@ class FlyweightFactory {
  +GetFlyweight(key)
 }
 
-Client -up-> FlyweightFactory
-FlyweightFactory *-right-> Flyweight
-Flyweight <|-- ConcreteFlyweight
+Client -right-> FlyweightFactory
+FlyweightFactory *--> Flyweight
 Flyweight <|-- UnsharedConcreteFlyweight
+Flyweight <|-right- ConcreteFlyweight
 ConcreteFlyweight -[hidden]- UnsharedConcreteFlyweight
 Client --> ConcreteFlyweight
 Client --> UnsharedConcreteFlyweight
 
 note right of FlyweightFactory
-  <b>GetFlyweight(key)</b>
-  ...
-  if (not exists flyweight[key]) {
-    flyweight[key] = new Flyweight()
+  <b>GetFlyweight(key)</b> {
+    if (not exists flyweight[key]) {
+      flyweight[key] = new Flyweight()
+    }
+    return flyweight[key]
   }
-  return flyweight[key]
 end note
 @enduml
