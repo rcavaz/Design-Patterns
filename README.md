@@ -14,7 +14,7 @@ Below are the patterns classified by scope and purpose. The first one specifies 
 Creational           | Structural   | Behavioral
 :------------------: | ------------ | -------------------
 [Factory Method][10] | [Adapter][2] | [Interpreter][12]
-                     |              | [Template Method][22]
+|                    |              | [Template Method][22]
 
 ### Object
 
@@ -24,11 +24,11 @@ Creational             | Structural      | Behavioral
 [Builder][4]           | [Bridge][3]     | [Command][6]
 [Prototype][17]        | [Composite][7]  | [Iterator][13]
 [Singleton][19]        | [Decorator][8]  | [Mediator][14]
-                       | [Facade][9]     | [Memento][15]
-                       | [Flyweight][11] | [Observer][16]
-                       | [Proxy][18]     | [State][20]
-                       |                 | [Strategy][21]
-                       |                 | [Visitor][23]
+|                      | [Facade][9]     | [Memento][15]
+|                      | [Flyweight][11] | [Observer][16]
+|                      | [Proxy][18]     | [State][20]
+|                      |                 | [Strategy][21]
+|                      |                 | [Visitor][23]
 
 
 ## [Behavioral](./readmes/behavioral.md)
