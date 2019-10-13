@@ -1,0 +1,40 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor White
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+together {
+  interface Creator {
+    +factoryMethod()
+    +operation()
+  }
+  note left
+  <b>operation()</b> {
+    product = factoryMethod()
+  }
+  end note
+
+  class ConcreteCreator {
+    +factoryMethod()
+  }
+  note left
+  <b>factoryMethod()</b>{
+    return new ConcreteProduct()
+  }
+  end note
+}
+
+together {
+  interface Product
+  class ConcreteProduct
+}
+
+Product <|-down- ConcreteProduct
+Creator <|-down- ConcreteCreator
+ConcreteCreator .left.> ConcreteProduct
+@enduml

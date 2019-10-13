@@ -1,0 +1,37 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+class Director {
+  +construct()
+}
+note bottom
+<b>construct()</b> {
+  forEach obj in structure
+    builder->BuildPart()
+}
+end note
+
+together {
+  interface Builder {
+    +BuildPart()
+  }
+
+  class ConcreteBuilder {
+    +BuildPart()
+    +GetResult()
+  }
+}
+
+class Product
+
+Director o-right-> Builder : builder
+Builder <|-- ConcreteBuilder
+ConcreteBuilder .right.> Product
+@enduml

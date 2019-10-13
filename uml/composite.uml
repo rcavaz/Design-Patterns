@@ -28,7 +28,7 @@ class Leaf {
 Client -right-> Component
 Component <|-right- Leaf
 Component <|-- Composite
-Composite *--> Component
+Composite o--> Component : children
 
 note right of Composite
   <b>operation()</b> {

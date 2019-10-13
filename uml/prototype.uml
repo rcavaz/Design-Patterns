@@ -1,0 +1,47 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Prototype {
+ +clone()
+}
+
+class Client {
+ +operation()
+}
+note left
+<b>operation()</b> {
+  p = prototype->clone()
+}
+end note
+
+together {
+  class ConcretePrototype2 {
+   +clone()
+  }
+  note bottom
+  <b>clone()</b> {
+    return copy of self
+  }
+  end note
+
+  class ConcretePrototype1 {
+   +clone()
+  }
+  note bottom
+  <b>clone()</b> {
+    return copy of self
+  }
+  end note
+}
+
+Client -right-> Prototype
+Prototype <|-- ConcretePrototype1
+Prototype <|-- ConcretePrototype2
+@enduml
