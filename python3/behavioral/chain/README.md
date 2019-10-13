@@ -4,7 +4,7 @@
 
 ![Chain of Responsibility](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/chain.uml)
 
-```
+```python
 class Handler(ABC):
 
     def __init__(self, successor=None):
@@ -16,7 +16,7 @@ class Handler(ABC):
 ```
 * Defines an interface for handling requests.
 
-```
+```python
 class ConcreteHandler(Handler):
 
     def handle_request(self, request):
@@ -28,7 +28,7 @@ class ConcreteHandler(Handler):
 * Handles the requests it is responsible for.
   * If it can't handle it, it sends it to its successor.
 
-```
+```python
 class Client:
 
     def action_1(self, request):
