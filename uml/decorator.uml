@@ -1,0 +1,40 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Component {
+ +operation()
+ +add(Component)
+ +remove(Component)
+ +getChild(key)
+}
+class Client
+class Composite {
+ +operation()
+ +add(Component)
+ +remove(Component)
+ +getChiled(key)
+}
+class Leaf {
+ +operation()
+}
+
+Client -right-> Component
+Component <|-right- Leaf
+Component <|-- Composite
+Composite *--> Component
+
+note right of Composite
+  <b>operation()</b> {
+  ...
+    forEach children
+      children.operation()
+  }
+end note
+@enduml

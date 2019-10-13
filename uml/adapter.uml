@@ -1,0 +1,46 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Target {
+ +request()
+}
+interface Adaptee {
+ +specificRequest()
+}
+class ConcreteAdaptee {
+ +specificRequest()
+}
+class Client
+class ClassAdapter {
+ +request()
+ +specificRequest()
+}
+note left
+  <b>request()</b> {
+    specificRequest()
+  }
+end note
+
+class ObjectAdapter {
+ +request()
+}
+note right
+  <b>request()</b> {
+    adaptee->specificRequest()
+  }
+end note
+
+Client -right-> Target
+ClassAdapter --|> Target
+ObjectAdapter --|> Target
+Adaptee <|-- ClassAdapter
+Adaptee <|-right- ConcreteAdaptee
+ConcreteAdaptee <--* ObjectAdapter : adaptee
+@enduml

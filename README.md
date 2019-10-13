@@ -34,37 +34,37 @@ Creational             | Structural      | Behavioral
 ## [Behavioral](./readmes/behavioral.md)
 Pattern                      | Intent | UML
 :--------------------------: | ------ | ------
-[Chain of Responsibility][5] | Object can fullfill a request.                                                | ![Chain of Responsibility](./uml/chain.png)
-[Command][6]                 | When and how a request is fullfilled.                                         | ![Command](./uml/command.png)
-[Interpreter][12]            | Grammar and interpretation of a language.                                     | ![Interpreter](./uml/interpreter.png)
-[Iterator][13]               | How an aggregate's elements are traversed.                                    | ![Iterator](./uml/iterator.png)
-[Mediator][14]               | How and which objects interact with each other.                               | ![Mediator](./uml/mediator.png)
-[Memento][15]                | What and when private information is stored outside an object.                | ![Memento](./uml/memento.png)
-[Observer][16]               | How dependent objects stay up to date.                                        | ![Observer](./uml/observer.png)
-[State][20]                  | States of an object.                                                          | ![State](./uml/state.png)
-[Strategy][21]               | An algorithm.                                                                 | ![Strategy](./uml/strategy.png)
-[Template Method][22]        | Steps of an algorithm.                                                        | ![Template Method](./uml/template.png)
-[Visitor][23]                | Operations that can be applied to object(s) without changing their class(es). | ![Visitor](./uml/visitor.png)
+[Chain of Responsibility][5] | Object can fullfill a request.                                 | ![Chain of Responsibility][28]
+[Command][6]                 | When and how a request is fullfilled.                          | ![Command][29]
+[Interpreter][12]            | Grammar and interpretation of a language.                      | ![Interpreter][35]
+[Iterator][13]               | How an aggregate's elements are traversed.                     | ![Iterator][36]
+[Mediator][14]               | How and which objects interact with each other.                | ![Mediator][37]
+[Memento][15]                | What and when private information is stored outside an object. | ![Memento][38]
+[Observer][16]               | How dependent objects stay up to date.                         | ![Observer][39]
+[State][20]                  | States of an object.                                           | ![State][43]
+[Strategy][21]               | An algorithm.                                                  | ![Strategy][44]
+[Template Method][22]        | Steps of an algorithm.                                         | ![Template Method][45]
+[Visitor][23]                | Apply operation to objects without changing its class(es).     | ![Visitor][46]
 
 ## [Creational](./readmes/creational.md)
 Pattern          | Intent | UML
-:---------------------------------------: | ------ | ------
-[Abstract Factory](./readmes/abstract.md) | Families of product objects.             | ![Abstract Factory](./uml/abstract.png)
-[Builder](./readmes/builder.md)           | How a composite object gets created.     | ![Builder](./uml/builder.png)
-[Factory Method](./readmes/factory.md)    | Subclass of object that is instantiated. | ![Factory Method](./uml/factory.png)
-[Prototype](./readmes/prototype.md)       | Class of object that is instantiated.    | ![Prototype](./uml/prototype.png)
-[Singleton](./readmes/singleton.md)       | The sole instance of a class.            | ![Singleton](./uml/singleton.png)
+:-------------------: | ------ | ------
+[Abstract Factory][1] | Families of product objects.             | ![Abstract Factory][24]
+[Builder][4]          | How a composite object gets created.     | ![Builder][27]
+[Factory Method][10]  | Subclass of object that is instantiated. | ![Factory Method][33]
+[Prototype][17]       | Class of object that is instantiated.    | ![Prototype][40]
+[Singleton][19]       | The sole instance of a class.            | ![Singleton][42]
 
 ## [Structural](./readmes/structural.md)
 Pattern                             | Intent | UML
-:---------------------------------: | ------ | ------
-[Adapter](./readmes/adapter.md)     | Interface of an object.                        | ![Adapter](./uml/adapter.png)
-[Bridge](./readmes/bridge.md)       | Implementation of an object.                   | ![Bridge](./uml/bridge.png)
-[Composite](./readmes/composite.md) | Structure and composition without subclassing. | ![Composite](./uml/composite.png)
-[Decorator](./readmes/decorator.md) | Responsibilities without subclassing.          | ![Decorator](./uml/decorator.png)
-[Facade](./readmes/facade.md)       | Interface to a subsystem.                      | ![Facade](./uml/facade.png)
-[Flyweight](./readmes/flyweight.md) | Storage costs of objects.                      | ![Flyweight](./uml/flyweight.png)
-[Proxy](./readmes/proxy.md)         | How an object's location is accessed.          | ![Proxy](./uml/proxy.png)
+:-------------: | ------ | ------
+[Adapter][2]    | Interface of an object.                        | ![Adapter][25]
+[Bridge][3]     | Implementation of an object.                   | ![Bridge][26]
+[Composite][7]  | Structure and composition without subclassing. | ![Composite][30]
+[Decorator][8]  | Responsibilities without subclassing.          | ![Decorator][31]
+[Facade][9]     | Interface to a subsystem.                      | ![Facade][32]
+[Flyweight][11] | Storage costs of objects.                      | ![Flyweight][34]
+[Proxy][18]     | How an object's location is accessed.          | ![Proxy][41]
 
 
 [1]: ./readmes/abstract.md
@@ -91,6 +91,29 @@ Pattern                             | Intent | UML
 [22]: ./readmes/template.md
 [23]: ./readmes/visitor.md
 
+[24]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/abstract.uml
+[25]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/adapter.uml
+[26]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/bridge.uml
+[27]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/builder.uml
+[28]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/chain.uml
+[29]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/command.uml
+[30]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/composite.uml
+[31]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/decorator.uml
+[32]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/facade.uml
+[33]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/factory.uml
+[34]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/flyweight.uml
+[35]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/interpreter.uml
+[36]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/iterator.uml
+[37]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/mediator.uml
+[38]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/memento.uml
+[39]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/observer.uml
+[40]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/prototype.uml
+[41]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/proxy.uml
+[42]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/singleton.uml
+[43]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/state.uml
+[44]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/strategy.uml
+[45]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/template.uml
+[46]: http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/visitor.uml
 
 ## References
 1. Gamma, Erich, et al. Design Patterns : Elements of Reusable Object-Oriented Software. Machinery Industry, 2003.

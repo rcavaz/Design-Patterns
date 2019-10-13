@@ -1,0 +1,43 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Flyweight {
+ +operation(extrinsicState)
+}
+class Client
+class ConcreteFlyweight {
+ +intrinsicState
+ +operation(extrinsicState)
+}
+class UnsharedConcreteFlyweight {
+ +allState
+ +operation(extrinsicState)
+}
+class FlyweightFactory {
+ +GetFlyweight(key)
+}
+
+Client -up-> FlyweightFactory
+FlyweightFactory *-right-> Flyweight
+Flyweight <|-- ConcreteFlyweight
+Flyweight <|-- UnsharedConcreteFlyweight
+ConcreteFlyweight -[hidden]- UnsharedConcreteFlyweight
+Client --> ConcreteFlyweight
+Client --> UnsharedConcreteFlyweight
+
+note right of FlyweightFactory
+  <b>GetFlyweight(key)</b>
+  ...
+  if (not exists flyweight[key]) {
+    flyweight[key] = new Flyweight()
+  }
+  return flyweight[key]
+end note
+@enduml

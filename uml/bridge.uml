@@ -1,0 +1,37 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Abstraction {
+ +operation()
+}
+interface Implementor {
+ +operationImp()
+}
+class Client
+class RefinedAbstraction
+class ConcreteImplementorA {
+ +operationImp()
+}
+class ConcreteImplementorB {
+ +operationImp()
+}
+
+Client -right-> Abstraction
+Abstraction <|-- RefinedAbstraction
+Abstraction o--> Implementor : imp
+Implementor <|-- ConcreteImplementorA
+Implementor <|-- ConcreteImplementorB
+
+note right of Abstraction
+  <b>operation()</b> {
+    imp->operation()
+  }
+end note
+@enduml

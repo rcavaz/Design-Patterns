@@ -1,0 +1,28 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Subject {
+ +Request()
+}
+class Client
+class Proxy {
+ +Request()
+}
+class RealSubject {
+ +Request()
+}
+
+Subject <-left- Client
+Subject <|-- Proxy
+Subject <|-- RealSubject
+RealSubject <-left- Proxy
+
+note right of Proxy : Request() {\n  realSubject.Request()\n}
+@enduml
