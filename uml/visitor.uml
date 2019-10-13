@@ -1,0 +1,53 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor White
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Visitor {
+  +visitElementA(ElementA)
+  +visitElementB(ElementB)
+}
+class Visitor1 {
+  +visitElementA(ElementA)
+  +visitElementB(ElementB)
+}
+class Visitor2 {
+  +visitElementA(ElementA)
+  +visitElementB(ElementB)
+}
+
+interface Element {
+  +accept(Visitor)
+}
+class ElementA {
+  +accept(Visitor)
+  +operationA()
+}
+note bottom
+<b>accept(Visitor v)</b> {
+  v->visitElementA(self)
+}
+end note
+class ElementB {
+  +accept(Visitor)
+  +operationB()
+}
+note bottom
+<b>accept(Visitor v)</b> {
+  v->visitElementB(self)
+}
+end note
+
+Visitor <|-- Visitor1
+Visitor <|-- Visitor2
+Element <|-- ElementA
+Element <|-- ElementB
+Client --> Visitor
+Client -right-> ObjectStructure
+ObjectStructure *--> Element
+@enduml

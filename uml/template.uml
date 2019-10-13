@@ -1,0 +1,32 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+abstract AbstractClass {
+  +templateMethod()
+  +primitiveOperation1()
+  +primitiveOperation2()
+}
+note right
+<b>templateMethod()</b> {
+  (...)
+  primitiveOperation1()
+  (...)
+  primitiveOperation2()
+  (...)
+}
+end note
+
+class ConcreteClass {
+  +primitiveOperation1()
+  +primitiveOperation2()
+}
+
+AbstractClass <|-- ConcreteClass
+@enduml

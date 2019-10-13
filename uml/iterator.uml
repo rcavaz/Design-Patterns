@@ -1,0 +1,43 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+together {
+  interface Aggregate {
+    +createIterator()
+  }
+
+  class ConcreteAggregate {
+    +createIterator()
+  }
+  note bottom
+  <b>createIterator()</b> {
+    return new ConcreteIterator(self)
+  }
+  end note
+}
+
+together {
+  interface Iterator {
+    +first()
+    +next()
+    +isDone()
+    +currentItem()
+  }
+
+  class ConcreteIterator
+}
+
+Client -left-> Aggregate
+Client -right-> Iterator
+Aggregate <|-- ConcreteAggregate
+Iterator <|-- ConcreteIterator
+ConcreteAggregate .right.> ConcreteIterator
+ConcreteAggregate <-- ConcreteIterator
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor White
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+class Context {
+  +ContextInterface()
+}
+
+interface Strategy {
+  +algorithmicInterface()
+}
+
+class ConcreteStrategyA {
+  +algorithmicInterface()
+}
+
+class ConcreteStrategyB {
+  +algorithmicInterface()
+}
+
+class ConcreteStrategyC {
+  +algorithmicInterface()
+}
+
+Strategy <|-- ConcreteStrategyA
+Strategy <|-- ConcreteStrategyB
+Strategy <|-- ConcreteStrategyC
+Context o-right-> Strategy : strategy
+@enduml

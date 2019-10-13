@@ -1,0 +1,54 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor White
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Subject {
+  +attach(Observer)
+  +detach(Observer)
+  +notify()
+}
+note left
+<b>notify()</b> {
+  forEach observer:
+    $_->update()
+}
+end note
+
+class ConcreteSubject {
+  -subjectState
+  +getState()
+  +setState()
+}
+note left
+<b>getState()</b> {
+  return subjectState
+}
+end note
+
+interface Observer {
+  +update()
+}
+
+class ConcreteObserver {
+  -observerState
+  +update()
+}
+note bottom
+<b>update()</b> {
+  observerState =
+    subject->getState()
+}
+end note
+
+Subject <|-- ConcreteSubject
+Observer <|-- ConcreteObserver
+
+Subject *-right-> Observer : observer
+ConcreteSubject <-left- ConcreteObserver : subject
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+class Originator {
+  -state
+  +setMemento(Memento m)
+  +createMemento()
+}
+note bottom
+<b>setMemento()</b> {
+  state = m->getState()
+}
+...
+<b>createMemento</b> {
+  return new Memento(state)
+}
+end note
+
+class Memento {
+  -state
+  +getState()
+  +setState()
+}
+
+class Caretaker
+
+Originator .right.> Memento
+Memento <-up-o Caretaker
+@enduml

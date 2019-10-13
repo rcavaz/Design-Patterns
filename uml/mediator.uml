@@ -1,0 +1,24 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor White
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+interface Mediator
+class ConcreteMediator
+
+interface Colleague
+class ConcreteColleague1
+class ConcreteColleague2
+
+Mediator <|-- ConcreteMediator
+Colleague <|-- ConcreteColleague1
+Colleague <|-- ConcreteColleague2
+Colleague -left-> Mediator
+ConcreteMediator -right-> ConcreteColleague1
+ConcreteMediator --> ConcreteColleague2
+@enduml

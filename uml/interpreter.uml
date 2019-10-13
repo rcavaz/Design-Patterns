@@ -1,0 +1,31 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor White
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+class Client
+class Context
+
+together {
+  interface AbstractExpression {
+    +interpret(Context)
+  }
+  class TerminalExpression {
+    +interpret(Context)
+  }
+  class NonterminalExpression {
+    +interpret(Context)
+  }
+}
+
+Client --> Context
+Client --> AbstractExpression
+AbstractExpression <|-- TerminalExpression
+AbstractExpression <|-- NonterminalExpression
+NonterminalExpression *--> AbstractExpression
+@enduml

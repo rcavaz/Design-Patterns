@@ -1,0 +1,35 @@
+@startuml
+hide empty attributes
+hide empty members
+skinparam backgroundcolor GhostWhite
+skinparam class {
+ ArrowColor Black
+ BackgroundColor White
+ BorderColor Black
+}
+
+class Context {
+  +request()
+}
+note bottom
+<b>request</b> {
+  state->handle()
+}
+end note
+
+interface State {
+  +handle()
+}
+
+class ConcreteStateA {
+  +handle()
+}
+
+class ConcreteStateB {
+  +handle()
+}
+
+State <|-- ConcreteStateA
+State <|-- ConcreteStateB
+Context o-right-> State : state
+@enduml
