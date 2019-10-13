@@ -7,9 +7,9 @@ The code implementations differ from the book and include documentation specific
 
 ## Clasification
 
-Below are the patterns classified by scope and purpose. The first one specifies whether the pattern applies primarily to classes or objects while the second one reflects if they have either creational, structural or behavioral purpose.
-
 ### Class
+
+Patterns that apply primarily to classes.
 
 Creational           | Structural   | Behavioral
 :------------------: | ------------ | -------------------
@@ -17,6 +17,8 @@ Creational           | Structural   | Behavioral
 |                    |              | [Template Method][22]
 
 ### Object
+
+Patterns that apply primarily to objects.
 
 Creational             | Structural      | Behavioral
 :--------------------: | --------------- | ---------
