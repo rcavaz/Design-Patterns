@@ -23,12 +23,12 @@ AbstractProductA <|-- ConcreteProductA2
 AbstractProductB <|-- ConcreteProductB1
 AbstractProductB <|-- ConcreteProductB2
 
-Client ..> AbstractFactory
-Client ..> AbstractProductA
-Client ..> AbstractProductB
+Client --> AbstractFactory
+Client --> AbstractProductA
+Client --> AbstractProductB
 
-ConcreteFactory1 --> ConcreteProductA1
-ConcreteFactory1 --> ConcreteProductB1
-ConcreteFactory2 --> ConcreteProductA2
-ConcreteFactory2 --> ConcreteProductB2
+ConcreteFactory1 ..> ConcreteProductA1
+ConcreteFactory1 ..> ConcreteProductB1
+ConcreteFactory2 ..> ConcreteProductA2
+ConcreteFactory2 ..> ConcreteProductB2
 @enduml
