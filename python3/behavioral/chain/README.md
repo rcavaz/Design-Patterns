@@ -43,7 +43,7 @@ class Client:
 * Sends commands to the root of the chain.
 
 ### Examples
-1. [Framework](./framework.py) - Defer request handling to parent objects.
+1. [Pipeline](./pipeline.py) - Defer numeric system conversion to successors.
 
 #### Related Patterns
 * [Command](../command) - Chain of Responsibility can use Command to represent requests as objects.
