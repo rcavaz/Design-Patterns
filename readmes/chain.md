@@ -12,11 +12,11 @@ The Chain of Responsibility design pattern allows an object to send a command, w
 
 #### Implementation & Examples
 
-![Chain of Responsibility](../uml/chain.png)
+![Chain of Responsibility](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rcavaz/Design-Patterns/feature/python/uml/chain.uml)
 
 | Language                                | Example |
 | :-------------------------------------: | ------- |
-| [python](../python3/behavioral/chain) | [Framework](../python3/behavioral/chain/framework.py)
+| [python](../python3/behavioral/chain) | [Pipeline](../python3/behavioral/chain/pipeline.py)
 
 #### Specific problems and implementation consecuences
 
