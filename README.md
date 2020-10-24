@@ -1,4 +1,5 @@
 # Design-Patterns
+
 This is a collection of software design patterns from the well known "Design Patterns : Elements of Reusable Object-Oriented Software" book implemented in python.
 
 The main motivation for this proyect is for others to learn and compare programming languages while implementing these software patterns.
