@@ -1,12 +1,44 @@
 # Design-Patterns
 
-This is a collection of software design patterns from the well known "Design Patterns : Elements of Reusable Object-Oriented Software" book implemented in python.
+This is a collection of software design patterns from the well known "Design Patterns : Elements of Reusable Object-Oriented Software" book.
 
 The main motivation for this proyect is for others to learn and compare programming languages while implementing these software patterns.
 
-The code implementations differ from the book and include documentation specific to the language being used. To find a specific language implementation search for the 'Examples' section on each pattern page, right below the UML diagram.
+The code implementations differ from the book and include documentation specific to the language being used.
 
-# Clasification
+## The SOLID Principles
+
+### Single Responsibility Principle
+
+    A class should have one, and only one, reason to change.
+
+### Open/Closed Principle
+
+    Software entities should be open for extension, but closed for modification.
+
+### Liskov Substitution Principle
+
+    Objects of a superclass shall be replaceable with objects of its subclasses without breaking the application.
+
+    An overriden method of a subclass needs to accept the same input parameter values and return the same value as the method of the superclass. You can only decide to apply even stricter rules by returning a subset of the valid return values of the superclass.
+
+### Interface Segregation Principle
+
+    Clients should not be forced to depend upon interfaces that they do not use.
+
+### Dependency Inversion Principle
+
+    1. High-level modules should not depend on low-level modules. Both should depend on abstractions.
+    2. Abstractions should not depend on details. Details should depend on abstractions.
+
+### Other Principles
+
+* Program to an interface, not an implementation.
+* Cleanly separate interface and implementation.
+* Favor object composition over inheritance.
+
+
+# Patterns Clasification
 
 ## By Scope
 
@@ -48,7 +80,7 @@ Pattern                      | Intent | UML
 [Visitor][26]                | Apply operation to objects without changing its class(es).     | ![Visitor][49]
 
 ### [Creational][2]
-Pattern          | Intent | UML
+Pattern               | Intent | UML
 :-------------------: | ------ | ------
 [Abstract Factory][4] | Families of product objects.             | ![Abstract Factory][27]
 [Builder][7]          | How a composite object gets created.     | ![Builder][30]
@@ -57,13 +89,13 @@ Pattern          | Intent | UML
 [Singleton][22]       | The sole instance of a class.            | ![Singleton][45]
 
 ### [Structural][3]
-Pattern                             | Intent | UML
+Pattern         | Intent | UML
 :-------------: | ------ | ------
 [Adapter][5]    | Interface of an object.                        | ![Adapter][28]
 [Bridge][6]     | Implementation of an object.                   | ![Bridge][29]
-[Composite][10]  | Structure and composition without subclassing. | ![Composite][33]
-[Decorator][11]  | Responsibilities without subclassing.          | ![Decorator][34]
-[Facade][12]     | Interface to a subsystem.                      | ![Facade][35]
+[Composite][10] | Structure and composition without subclassing. | ![Composite][33]
+[Decorator][11] | Responsibilities without subclassing.          | ![Decorator][34]
+[Facade][12]    | Interface to a subsystem.                      | ![Facade][35]
 [Flyweight][14] | Storage costs of objects.                      | ![Flyweight][37]
 [Proxy][21]     | How an object's location is accessed.          | ![Proxy][44]
 
